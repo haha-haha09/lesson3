@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv2</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eeeeee;
+        }
+
+        .card {
+            width: 230px;
+            background-color: #a8e0f7;
+            border-radius: 16px;
+            padding: 40px 20px;
+            /*内边距：上下40px，左右20px*/
+            text-align: center;
+            color: #f3f6f6;
+
+            border: 3px solid #ebf8fe;
+            /*卡片外圈边框，3px实线*/
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            /* 鼠标悬浮：向上移动10px，同时放大1.05倍 */
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid #ffffff;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .job {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .line {
+            width: 70%;
+            height: 1px;
+            background-color: #fff;
+            margin: 0 auto 24px;
+        }
+
+
+        .icons {
+            display: flex;
+            /*图标容器开启弹性布局，横向排列图标 */
+            justify-content: space-evenly;
+            /*图标均匀分布，两边空隙相等 */
+            font-size: 24px;
+        }
+
+        .icon-item {
+            position: relative;
+            cursor: pointer;
+        }
+
+
+        .tip {
+            position: absolute;
+            bottom: 120%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #222;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s;
+        }
+
+
+        .tip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #222 transparent transparent transparent;
+        }
+
+        .icon-item:hover .tip {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+
+        <div class="avatar">
+            <img src="avatar.jpg" alt="头像">
+        </div>
+
+        <div class="name">avatar</div>
+        <div class="job">poaition</div>
+
+        <div class="line"></div>
+
+        <div class="icons">
+            <div class="icon-item">
+                T
+                <span class="tip">Twitter</span>
+            </div>
+            <div class="icon-item">
+                ins
+                <span class="tip">Instagram</span>
+            </div>
+            <div class="icon-item">
+                f
+                <span class="tip">Facebook</span>
+            </div>
+            <div class="icon-item">
+                in
+                <span class="tip">LinkedIn</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
