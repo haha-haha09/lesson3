@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lv4</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+
+
+        .rainbow {
+            /*使用 linear-gradient 制作从左到右的渐变下划线*/
+            background: linear-gradient(to right,
+                    red,
+                    orange,
+                    yellow,
+                    green,
+                    cyan,
+                    blue,
+                    violet) no-repeat;
+            background-position: left bottom;
+            background-size: 0 3px;
+            transition: background-size 0.4s ease;
+        }
+
+        /*鼠标悬停时：下划线宽度变为 100%，从左向右展开*/
+        .rainbow:hover {
+            background-size: 100% 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <span class="rainbow">我爱学前端!因为它是一个充满创造力和挑战的领域。通过学习前端，我可以不断探索新的技术和设计，为用户提供更好的用户体验。它让我充满激情和动力，成为一个优秀的前端工程师。</span>
+    </p>
+</body>
+
+</html>
